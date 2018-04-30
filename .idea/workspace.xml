@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d0d4cbaa-e8e3-4cf4-a882-db2c0663bd17" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/infobarbosa/kafka/ConsumerTutorial.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/infobarbosa/kafka/ConsumerTutorial.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/infobarbosa/kafka/ConsumerTutorial.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -19,11 +18,10 @@
       <file leaf-file-name="ConsumerTutorial.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/infobarbosa/kafka/ConsumerTutorial.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-126">
-              <caret line="23" column="82" selection-start-line="23" selection-start-column="82" selection-end-line="23" selection-end-column="82" />
+            <state relative-caret-position="254">
+              <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#989#1005#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -185,6 +183,7 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1280" height="777" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" />
       <window_info anchor="bottom" id="TODO" order="6" />
@@ -227,11 +226,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/infobarbosa/kafka/ConsumerTutorial.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-126">
-          <caret line="23" column="82" selection-start-line="23" selection-start-column="82" selection-end-line="23" selection-end-column="82" />
+        <state relative-caret-position="254">
+          <caret line="49" column="9" selection-start-line="49" selection-start-column="9" selection-end-line="49" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#989#1005#0" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -24,23 +24,29 @@ public class ConsumerTutorial {
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-tutorial-group");
 
         final String topic = "teste";
-        KafkaConsumer<String, String> consumer = new KafkaConsumer<String, String>(properties);
 
-        consumer.subscribe(Arrays.asList("teste"));
-        while(true){
-            ConsumerRecords<String, String> records = consumer.poll(100);
-            for(ConsumerRecord<String, String> record: records){
-                String key = record.key();
-                String value = record.value();
-                long offset = record.offset();
+        try {
+            KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
 
-                consumer.commitAsync(new OffsetCommitCallback() {
-                    @Override
-                    public void onComplete(Map<TopicPartition, OffsetAndMetadata> offsets, Exception exception) {
-                        logger.info("Processado registro " + key + " com valor " + value + " do offset " + offset);
-                    }
-                });
+            consumer.subscribe(Arrays.asList(topic));
+            while (true) {
+                ConsumerRecords<String, String> records = consumer.poll(100);
+                for (ConsumerRecord<String, String> record : records) {
+                    String key = record.key();
+                    String value = record.value();
+                    long offset = record.offset();
+
+                    consumer.commitAsync(new OffsetCommitCallback() {
+                        @Override
+                        public void onComplete(Map<TopicPartition, OffsetAndMetadata> offsets, Exception exception) {
+                            logger.info("Processado registro " + key + " com valor " + value + " do offset " + offset);
+                        }
+                    });
+                }
             }
+        }
+        catch(Exception e){
+            logger.error("Problemas durante o consumo", e);
         }
     }
 }

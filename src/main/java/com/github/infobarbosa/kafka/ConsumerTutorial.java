@@ -35,13 +35,22 @@ public class ConsumerTutorial {
                     String key = record.key();
                     String value = record.value();
                     long offset = record.offset();
+                    long partition = record.partition();
 
                     consumer.commitAsync(new OffsetCommitCallback() {
                         @Override
                         public void onComplete(Map<TopicPartition, OffsetAndMetadata> offsets, Exception exception) {
-                            logger.info("Processado registro " + key + " com valor " + value + " do offset " + offset);
+                            logger.info("Chave: " + key + "; Valor " + value + "; Particao: " + partition + " do offset " + offset);
                         }
                     });
+
+                    //coloca pra dormir um pouco
+                    try {
+                        Thread.sleep(100);
+                    }
+                    catch(InterruptedException e){
+                        logger.error("problemas durante o sono.", e);
+                    }
                 }
             }
         }

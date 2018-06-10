@@ -23,7 +23,7 @@ public class ConsumerTutorial {
         properties.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, "100");
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-tutorial-group");
 
-        final String topic = "teste";
+        final String topic = "teste2";
 
         try {
             KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
@@ -36,11 +36,17 @@ public class ConsumerTutorial {
                     String value = record.value();
                     long offset = record.offset();
                     long partition = record.partition();
+                    long timestamp = record.timestamp();
 
                     consumer.commitAsync(new OffsetCommitCallback() {
                         @Override
                         public void onComplete(Map<TopicPartition, OffsetAndMetadata> offsets, Exception exception) {
-                            logger.info("Chave: " + key + "; Valor " + value + "; Particao: " + partition + " do offset " + offset);
+                            logger.info("K: " + key
+                                    + "; V: " + value
+                                    + "; P: " + partition
+                                    + "; OS: " + offset
+                                    + "; TS: " + timestamp
+                            );
                         }
                     });
 

@@ -1,7 +1,7 @@
 # Pull base image.
 FROM ubuntu:latest
 
-RUN \
+RUN  \
 # Update
 apt-get update -y && \
 # Install Java

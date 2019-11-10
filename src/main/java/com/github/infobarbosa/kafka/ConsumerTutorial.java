@@ -15,7 +15,7 @@ public class ConsumerTutorial {
 
     public static void main(String[] args) {
         Properties properties = new Properties();
-        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, "kafka1:9092,kafka2:9092,kafka3:9092");
+        properties.put(ConsumerConfig.BOOTSTRAP_SERVERS_CONFIG, System.getenv("BOOTSTRAP_SERVERS_CONFIG"));
         properties.put(ConsumerConfig.KEY_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.put(ConsumerConfig.VALUE_DESERIALIZER_CLASS_CONFIG, StringDeserializer.class.getName());
         properties.put(ConsumerConfig.ENABLE_AUTO_COMMIT_CONFIG, "false");
@@ -23,7 +23,7 @@ public class ConsumerTutorial {
         properties.put(ConsumerConfig.HEARTBEAT_INTERVAL_MS_CONFIG, "100");
         properties.put(ConsumerConfig.GROUP_ID_CONFIG, "consumer-tutorial-group");
 
-        final String topic = "teste2";
+        final String topic = "teste";
 
         try {
             KafkaConsumer<String, String> consumer = new KafkaConsumer<>(properties);
